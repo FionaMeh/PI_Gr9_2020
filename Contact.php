@@ -171,7 +171,7 @@ if (isset($_GET['error'])) {
     echo '<div class="alert alert-danger">' . $alerti . '</div>';
 }
 ?>
-<form action="kontaktForma.php" method="POST">
+<form action="Forma.php" method="POST">
 
     <div class="contact-form">
         <i class="glyphicon glyphicon-envelope"></i>
