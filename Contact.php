@@ -95,82 +95,31 @@
         }
 
     </style>
-
 </head>
-
 <body>
-<?php include 'header.php'; ?>
-<div class="rate">
-    <h1>Rate us</h1>
-
-    <p>Please input a rating between 1-10:</p>
-
-    <input id="Test" type="text">
-    <button style="
-		background-color:green; 
-		color:#FFCCFF; 
-		
-		height:30px; 
-		width:100px; 
-		border-radius:6px; 
-		
-		 cursor: pointer;
-		   
-		  " type="button" onclick="myFunction()">Rate us
-    </button>
-    <p id="rate"></p>
-</div>
 
 
-<script>
-    function myFunction() {
-        var message, x;
-        message = document.getElementById("rate");
-        message.innerHTML = "Thank you for your service";
-        x = document.getElementById("Test").value;
-        try {
-            if (x == "") throw " Empty";
-            if (isNaN(x)) throw " Not a number";
-            x = Number(x);
-
-            if (x > 10) throw " We can't be that good !!";
-        } catch (err) {
-            message.innerHTML = "Are you sure? " + err;
-        }
-    }
-
-    <!-- FooterValidation - javascript -->
-    function validate() {
-        var emri = document.getElementById('emri').value;
-        var email = document.getElementById('imella').value;
-        var a = document.footerform.Email.value;
-
-
-        if ((emri == "") && (email == "")) {
-            document.getElementById('errorinfooter').innerHTML = "All fields must be filled!";
-            return false;
-        }
-        if (a.indexOf('@') <= 0) {
-            document.getElementById('emailerror').innerHTML = "Invalid @ position!";
-            return false;
-
-        } else if ((a.charAt(a.length - 4) != '.') && (a.charAt(a.length - 3) != '.')) {
-            document.getElementById('emailerror').innerHTML = "Invalid . position at 4!";
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-</script>
-
-<?php
+<?php include('./views/header.php');
 $alerti = "";
 if (isset($_GET['error'])) {
     $alerti = "Please fill all the blanks";
     echo '<div class="alert alert-danger">' . $alerti . '</div>';
 }
 ?>
+
+<div class="rate">
+    <h1>Rate us</h1>
+
+    <p>Please input a rating between 1-10:</p>
+    <form action="Forma.php" method="POST">
+        <input id="Test" name="teksti" type="text">
+        <input type="submit" name="submit-rate" value="Submit"/>
+
+        <p id="rate"></p>
+</div>
+</form>
+
+
 <form action="Forma.php" method="POST">
 
     <div class="contact-form">
@@ -185,8 +134,7 @@ if (isset($_GET['error'])) {
 
         <div class="txtb">
             <label>Email :</label>
-            <input type="email" name="email" placeholder="Enter your email address"
-                   id="inputEmail">
+            <input type="email" name="email" placeholder="Enter your email address">
 
         </div>
 
@@ -201,7 +149,7 @@ if (isset($_GET['error'])) {
 
 </body>
 
-<?php include 'footer.php'; ?>
+<?php include('./views/footer.php'); ?>
 
 </html>
 
