@@ -128,13 +128,13 @@ background-color: #4CAF50;
  			<br> <br>
  			<p>If you are interested to be part of our journey please submit your name and email down below and we will make sure to contact you in the near future:</p>
  			<br>
- 			<form name ="footerform" action="#" method="post" onsubmit="return validate();">
+ 			<form name ="footerform" action="./forma.php" method="post" >
  			<input id="emri" type="text" placeholder="Name" name="Emri" class="contact-input" /> <br/>
  			<input id="imella" type="email" placeholder="Email" name="Email" value=""  class="contact-input"/><br/>
 			<div id="emailerror"></div>
 
- 			<button type="submit" class="btm">SUBMIT</button>
-			<div id="errorinfooter"></div>
+ 			<button input type="submit" name="footer-submit" class="btm">SUBMIT</button>
+
              </form>
 
 
