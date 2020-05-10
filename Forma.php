@@ -6,6 +6,8 @@
        $name = $_POST['name'];
        $email = $_POST['email'];
        $message = $_POST['message'];
+
+
        $string_exp = "/^[A-Za-z .'-]+$/";
 
 
@@ -26,6 +28,7 @@
            }
 
        }
+
 
    }
 
@@ -50,6 +53,49 @@ if (isset($_POST['submit-rate'])) {
     }
 
 }
+
+
+if (isset($_POST['submitted'])) {
+
+    if (isset($_POST['checkRoom'])) {
+        $checkRoom = $_POST['checkRoom'];
+    } else {
+        died('Please choose the type of room');
+
+    }
+    if (isset($_POST['pass'])) {
+        $pass = $_POST['pass'];
+        if ((!is_numeric($pass)) || (strlen($pass) != 4)) {
+            died('give a valid pin');
+        }
+    }
+    if ((isset($_POST['data1'])) || isset($_POST['data1'])) {
+        $data1 = $_POST['data1'];
+        $data2 = $_POST['data2'];
+        if ($data1 == "" || $data2 == "") {
+            died('give dates');
+        }
+
+    } else {
+        died('Please enter pin');
+    }
+
+
+}
+if (isset($_POST['footer-submit']))
+    $emrii = $_POST['Emri'];
+$eemail = $_POST['Email'];
+if (empty($eemail) || empty($emrii)) {
+    echo "We need your info";
+
+} elseif (!isValidEmail($eemail)) {
+    echo "Please give a valid email";
+} else {
+    echo "Thank you! We will contact you asap";
+}
+
+
+?>
 
 
 
