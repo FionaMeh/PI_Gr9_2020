@@ -1,36 +1,48 @@
 <?php
 
+include "database.php";
 
-   if(isset($_POST['submit-send']))
-   {
-       $name = $_POST['name'];
-       $email = $_POST['email'];
-       $message = $_POST['message'];
-
-
-       $string_exp = "/^[A-Za-z .'-]+$/";
+if (isset($_POST['submit-send'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
 
-       if (empty($name) || empty($email) || empty($message)) {
-           header('location:Contact.php?error');
-       } elseif (!isValidEmail($email)) {
-           died(' The email you entered is incorrect');
-       } elseif (!preg_match($string_exp, $name) || (strlen($name) < 3)) {
-           died(' The username you entered is incorrect');
-       } else {
-           $recipent = "eriseratr@gmail.com";
-           $formcontent = "From: $name \n Message: $message";
-           $mailHeader = "From: $email";
-           if (mail($recipent, $formcontent, $mailHeader)) {
-               print "<h3>Mesazhi juaj u pranua</h3>";
-           } else {
-               print "<h3>Mesazhi juaj nuk u pranua, ju lutem provoni me vone</h3>";
-           }
-
-       }
+    $string_exp = "/^[A-Za-z .'-]+$/";
 
 
-   }
+    if (empty($name) || empty($email) || empty($message)) {
+        header('location:Contact.php?error');
+    } elseif (!isValidEmail($email)) {
+        died(' The email you entered is incorrect');
+    } elseif (!preg_match($string_exp, $name) || (strlen($name) < 3)) {
+        died(' The username you entered is incorrect');
+    } else {
+        $recipent = "eriseratr@gmail.com";
+        $formcontent = "From: $name \n Message: $message";
+        $mailHeader = "From: $email";
+        if (mail($recipent, $formcontent, $mailHeader)) {
+            print "<h3>Mesazhi juaj u pranua</h3>";
+        } else {
+            print "<h3>Mesazhi juaj nuk u pranua, ju lutem provoni me vone</h3>";
+        }
+
+    }
+
+
+//$name= $_POST['name'];
+//$email=$_POST['email'];
+//$message=$_POST['message'];
+
+//$sql= "INSERT INTO contact_form (firstName, emaili, mesazhi) VALUES (
+//'$name', '$email', '$message') ";
+    //   $rezultati = mysqli_query($con,$sql);
+
+// echo "emri".$name;
+// echo "email:".$email;
+
+
+}
 
 
 function isValidEmail($imella)
@@ -76,26 +88,34 @@ if (isset($_POST['submitted'])) {
             died('give dates');
         }
 
-    } else {
-        died('Please enter pin');
+    }
+    if ((isset($_POST['name']))) {
+        $emri = $_POST['name'];
+        if ($emri == "") {
+            died('Please enter your name and last name');
+        }
     }
 
+    $sql = "INSERT INTO booked_form (client_name, room_type, check_IN, check_OUT ) VALUES (
+'$emri', '$checkRoom', '$data1', '$data2' ) ";
+    $rezultati = mysqli_query($con, $sql);
+
+    echo "Klienti  " . $emri . "  Rezervoi dhomen  " . $checkRoom . "  ne daten " . $data1 . "  deri ne  " . $data2;
+
 
 }
-if (isset($_POST['footer-submit']))
+
+if (isset($_POST['footer-submit'])) {
     $emrii = $_POST['Emri'];
-$eemail = $_POST['Email'];
-if (empty($eemail) || empty($emrii)) {
-    echo "We need your info";
+    $eemail = $_POST['Email'];
+    if (empty($eemail) || empty($emrii)) {
+        echo "We need your info";
 
-} elseif (!isValidEmail($eemail)) {
-    echo "Please give a valid email";
-} else {
-    echo "Thank you! We will contact you asap";
+    } elseif (!isValidEmail($eemail)) {
+        echo "Please give a valid email";
+    } else {
+        echo "Thank you! We will contact you asap";
+    }
+
 }
-
-
 ?>
-
-
-
