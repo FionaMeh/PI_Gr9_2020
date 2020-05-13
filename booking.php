@@ -172,10 +172,23 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="form-group">
-                            <input id="PIN" class="form-control" type="password" name="pass">
-                            <span class="form-label"> CARD PIN</span>
-                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control" type="emri" name="name">
+                                        <span class="form-label"> Name and Surname:</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input id="PIN" class="form-control" type="password" name="pass">
+                                        <span class="form-label"> CARD PIN</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
                         <div class="form-btn">
                             <input type="submit" name="submitted" value="submitted">Book Room</input>
                             <div id="result"></div>
