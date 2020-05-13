@@ -96,7 +96,7 @@
 
     </style>
 </head>
-<body>
+
 
 
 <?php include('./views/header.php');
