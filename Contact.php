@@ -109,6 +109,7 @@ if (isset($_GET['error'])) {
     
 
 if(isset($_POST['submit-rate'])) {
+    $name = $_POST['teksti'];
 ?>
 
 <div class="rate">
