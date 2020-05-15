@@ -41,6 +41,7 @@
 }
 
 	</script>
+	</head>
 <header>
     <?php include('./views/header.php');
     $alerti = "";
