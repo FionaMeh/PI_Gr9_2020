@@ -114,6 +114,7 @@ if(isset($_POST['submit-rate'])) {
         $file = fopen('lista.txt', 'a');
         fwrite($file, $name . "\n");
         echo 'Pergjigja juaj u regjistrua. Ju falemiderit!';
+         } else {
 ?>
 
 <div class="rate">
