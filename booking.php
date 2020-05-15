@@ -3,103 +3,11 @@
 <head lang="en">
     <meta charset="utf-8">
     <title>Booking</title>
-    <style>
-		header {
-  background-color: #171b1e;
-  font: "Times New Roman", Times, serif;
-      font-size: medium;
-  }
-.header-table {
-      background: #1e1d22;
-  }
-  /* menu bar ne fillim me linqe ne mes te saj */
-  
-  .topnav {
-      border: 1px solid #000000;
-      border-width: 1px 0;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-  }
-.topnav li {
-      display: inline;
-  }
-  
-  .topnav a {
-      display: inline-block;
-      padding: 10px;
-      border-right: 1px solid grey;
-  }
-  
-  .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-  }
-  .class_search1 
-	{ 
-		float:right; 
-		background-color: #484848; 
-		color:#FFCCFF; 
-		text-align:center; 
-		height:30px; 
-		width:170px; 
-		border-radius:6px; 
-		font-size:12px;
-		 outline: none;
-		   border: none;
-	} 
-  /* Hijezimi me ngjyre te zeze ne linkun aktual */
-  
-  .topnav a.active {
-      background-color: #000000;
-      color: white;
-  }
-  
-  .topnav a:last-child {
-      border-right: none
-  }
-  /* menu bar end */
-  div.korniza {
-      background-color: #ffffff;
-      border: 1px solid black;
-      opacity: 0.6;
-  }
-  
-  div.korniza p {
-      margin: 5px 5px;
-      font-weight: bold;
-      color: black;
-  }
-  
-  div.alfa {
-      margin-top: 5%;
-      margin-left: 5%;
-  }
-  
-  a:hover {
-      color: white;
-  }
+    <link rel="stylesheet" href="views/bookstyle.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-/*read more */
-#more{
-  display: none;
-}
-
-.button {
-        float:right; 
-		background-color:green; 
-		color:#FFCCFF; 
-		text-align:center; 
-		height:30px; 
-		width:100px; 
-		border-radius:6px; 
-		font-size:15px;
-		 cursor: pointer;
-		   outline: none;
-		   border: none;
-}
-  </style>
 </head>
 
 <script>
@@ -296,12 +204,13 @@
     </div>
 </div>
 
-
 </body>
+
 <footer>
     <?php include('./views/footer.php'); ?>
 </footer>
 </html>
+
 	 
 	 
 		  
