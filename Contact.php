@@ -117,6 +117,7 @@ if(isset($_POST['submit-rate'])) {
          } else {
          echo 'Ju lutem provoni perseri!';
     }
+}
 ?>
 
 <div class="rate">
