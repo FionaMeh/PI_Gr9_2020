@@ -99,7 +99,7 @@ background-color: #4CAF50;
 					 </div>
 
 	 <br><br>
-	 <a style="color:red;" href="reservation.html">Book an Expedition</a>
+	 <a style="color:red;" href="reservation.php">Book an Expedition</a>
 	 </div>
 
 			  <div class="footer-section contact ">
@@ -113,7 +113,7 @@ background-color: #4CAF50;
 				  </p>
 				  <br>
 
-				<a href="map.html">Click here for a Map to find us »</a>
+				<a href="Map.php">Click here for a Map to find us »</a>
 				<br>
 				<p> Tel:048-555-666<br/>
 					Fax:038-222-444 <br/>
