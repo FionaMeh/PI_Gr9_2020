@@ -6,6 +6,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
     <style>
 
         body {
@@ -134,7 +135,8 @@ if (isset($_GET['error'])) {
 
         <div class="txtb">
             <label>Email :</label>
-            <input type="email" name="email" placeholder="Enter your email address">
+            <input type="email" name="email" id="inputEmail"
+                   placeholder="Enter your email address">
 
         </div>
 
@@ -142,9 +144,15 @@ if (isset($_GET['error'])) {
             <label>Message :</label>
             <textarea name="message" placeholder="Your message here"> </textarea>
         </div>
+
         <input type="submit" name="submit-send" value="Send"/>
+
+
+    </div>
     </div>
 </form>
+<div id="result" class="table-responsive">
+</div>
 
 
 </body>
@@ -152,4 +160,5 @@ if (isset($_GET['error'])) {
 <?php include('./views/footer.php'); ?>
 
 </html>
+
 
