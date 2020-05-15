@@ -117,6 +117,14 @@ if(isset($_POST['submit-rate'])) {
          echo 'Ju lutem provoni perseri!';
     }
 }
+    
+     function testfun()
+{
+   $myfile = fopen("lista.txt", "r") or die("Unable to open file!");
+   echo fread($myfile,filesize("lista.txt"));
+   fclose($myfile);
+}
+
 ?>
 
 <div class="rate">
