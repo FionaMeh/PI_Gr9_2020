@@ -2,6 +2,9 @@
 
 include "database.php";
 
+//forma per kontakt, validimi, perdorimi i shprehjeve regEx per email dhe
+//konektimi me databaze
+
 if (isset($_POST['submit-send'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -30,16 +33,17 @@ if (isset($_POST['submit-send'])) {
     }
 
 
-//$name= $_POST['name'];
-//$email=$_POST['email'];
-//$message=$_POST['message'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-//$sql= "INSERT INTO contact_form (firstName, emaili, mesazhi) VALUES (
-//'$name', '$email', '$message') ";
-    //   $rezultati = mysqli_query($con,$sql);
-
-// echo "emri".$name;
-// echo "email:".$email;
+    $sql = "INSERT INTO contact_form (firstName, emaili, mesazhi) VALUES (
+'$name', '$email', '$message') ";
+    if ($con->query($sql) == TRUE) {
+        echo "Your records are saved " . $name;
+    } else {
+        echo "Something wrong happened";
+    }
 
 
 }
@@ -51,22 +55,25 @@ function isValidEmail($imella)
         && preg_match('/^(?=.{1,64}@.{4,64}$)(?=.{6,100}$).*/', $imella);
 }
 
+
 function died($error)
 {
     echo '<script type="text/javascript">alert("We are very sorry, but there were error(s) found with the form you submitted.' . $error . ' ");</script>';
 }
 
+//validimi i formes per rating te contact
+
 if (isset($_POST['submit-rate'])) {
     $teksti = $_POST['teksti'];
     if (($teksti == "") || (!is_numeric($teksti)) || ($teksti < 1) || ($teksti > 10)) {
-        echo "Not possible";
+        died('Please fill the blank');
     } else {
-        echo "Faleminderit qe votuat";
+        echo "Thank you for voting";
     }
 
 }
 
-
+//Forma per booking, validimet dhe konektimi me databaze
 if (isset($_POST['submitted'])) {
 
     if (isset($_POST['checkRoom'])) {
@@ -98,12 +105,17 @@ if (isset($_POST['submitted'])) {
 
     $sql = "INSERT INTO booked_form (client_name, room_type, check_IN, check_OUT ) VALUES (
 '$emri', '$checkRoom', '$data1', '$data2' ) ";
-    $rezultati = mysqli_query($con, $sql);
-
-    echo "Klienti  " . $emri . "  Rezervoi dhomen  " . $checkRoom . "  ne daten " . $data1 . "  deri ne  " . $data2;
+    if ($con->query($sql) == TRUE) {
+        echo "Your reservation was successful,  " . $emri . " we will be waiting for you on " . $data1;
+    } else {
+        echo "Error: " . $sql . " " . $con->error;
+    }
+    $con->close();
 
 
 }
+
+//validimi i formes te footer-i
 
 if (isset($_POST['footer-submit'])) {
     $emrii = $_POST['Emri'];
