@@ -6,7 +6,6 @@
     <title>Contact</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
     <style>
 
         body {
@@ -22,7 +21,7 @@
 
         .rate {
             text-align: center;
-            background: #f1f1f1;;
+            background: #f1f1f1;
             width: 300px;
             position: absolute;
             top: 75%;
@@ -98,7 +97,7 @@
     </style>
 </head>
 
-
+<body>
 
 <?php include('./views/header.php');
 $alerti = "";
@@ -106,19 +105,47 @@ if (isset($_GET['error'])) {
     $alerti = "Please fill all the blanks";
     echo '<div class="alert alert-danger">' . $alerti . '</div>';
 }
-?>
+
+
+if(isset($_POST['submit-rate'])) {
+    $name = $_POST['teksti'];
+
+    if (!empty($name)) {
+        $file = fopen('lista.txt', 'a');
+        fwrite($file, $name . "\n");
+    } else {
+        echo 'Ju lutem provoni perseri!';
+    }
+}
+    
+    function testfun()
+{
+   $myfile = fopen("lista.txt", "r") or die("Unable to open file!");
+   echo fread($myfile,filesize("lista.txt"));
+   fclose($myfile);
+}
+
+if(array_key_exists('test',$_POST)){
+   testfun();
+}
+    ?>
 
 <div class="rate">
     <h1>Rate us</h1>
 
     <p>Please input a rating between 1-10:</p>
-    <form action="Forma.php" method="POST">
+    <form action="Contact.php" method="POST">
         <input id="Test" name="teksti" type="text">
         <input type="submit" name="submit-rate" value="Submit"/>
 
         <p id="rate"></p>
-</div>
+
+     </form>
+    <form action="lista.txt" method="post">
+    <input type="submit" name="test" id="test" value="Ratingu" /><br/>
 </form>
+
+</div>
 
 
 <form action="Forma.php" method="POST">
@@ -135,8 +162,7 @@ if (isset($_GET['error'])) {
 
         <div class="txtb">
             <label>Email :</label>
-            <input type="email" name="email" id="inputEmail"
-                   placeholder="Enter your email address">
+            <input type="email" name="email" placeholder="Enter your email address">
 
         </div>
 
@@ -144,15 +170,9 @@ if (isset($_GET['error'])) {
             <label>Message :</label>
             <textarea name="message" placeholder="Your message here"> </textarea>
         </div>
-
         <input type="submit" name="submit-send" value="Send"/>
-
-
-    </div>
     </div>
 </form>
-<div id="result" class="table-responsive">
-</div>
 
 
 </body>
@@ -160,5 +180,3 @@ if (isset($_GET['error'])) {
 <?php include('./views/footer.php'); ?>
 
 </html>
-
-
