@@ -105,6 +105,10 @@ if (isset($_GET['error'])) {
     $alerti = "Please fill all the blanks";
     echo '<div class="alert alert-danger">' . $alerti . '</div>';
 }
+    
+    
+
+if(isset($_POST['submit-rate'])) {
 ?>
 
 <div class="rate">
