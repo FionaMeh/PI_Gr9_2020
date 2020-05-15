@@ -112,6 +112,7 @@ if(isset($_POST['submit-rate'])) {
     $name = $_POST['teksti'];
     if (!empty($name)) {
         $file = fopen('lista.txt', 'a');
+        fwrite($file, $name . "\n");
 ?>
 
 <div class="rate">
