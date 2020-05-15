@@ -23,15 +23,15 @@
 <div class="alfa">
 
 
-<a href="faqja1_pamja1.html"><img src="images/plazhe.jpg" style="width:550px; height:300px;margin-left:50px;" alt="kek me prtokall">
+<a href="aboutus1.php"><img src="images/plazhe.jpg" style="width:550px; height:300px;margin-left:50px;" alt="kek me prtokall">
  </a>
 
-<a href="faqja1_pamja2.html"><img src="images/alpett.jpg"  style="width:550px; height:300px; margin-left:50px;" alt="tiramisu">
+<a href="aboutus2.php"><img src="images/alpett.jpg"  style="width:550px; height:300px; margin-left:50px;" alt="tiramisu">
  </a>
 
  
 <div class="korniza1" style="width:400px; height:150px;margin:5px 50px;">
-<h4><br><a href="faqja1_pamja1.html" style="color:black;">Untainted Beaches of Albania</a></h4>
+<h4><br><a href="aboutus1.php" style="color:black;">Untainted Beaches of Albania</a></h4>
 <br>
  <p>Albania’s southern coastline, with its lovely traditional hamlets, cobblestoned streets and
     small Orthodox churches, has plenty of beautiful beaches lapped by pristine waters. And if 
@@ -40,7 +40,7 @@
 </div>
 
 <div class="korniza1" style="width:400px; height:150px; margin:-160px 650px;">
-<h4><br><a href="faqja1_pamja2.html" style="color:black;">Picturesque mountains of Albania</a></h4>
+<h4><br><a href="aboutus2.php" style="color:black;">Picturesque mountains of Albania</a></h4>
 <br>
  <p >If you think that Albania has only gorgeous beaches to offer visitors, think again. One of 
  the most beautiful things to do in the Land of the Eagles is to spend time relaxing, surrounded 
