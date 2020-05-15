@@ -115,6 +115,7 @@ if(isset($_POST['submit-rate'])) {
         fwrite($file, $name . "\n");
         echo 'Pergjigja juaj u regjistrua. Ju falemiderit!';
          } else {
+         echo 'Ju lutem provoni perseri!';
 ?>
 
 <div class="rate">
