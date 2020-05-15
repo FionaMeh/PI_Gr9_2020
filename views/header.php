@@ -161,11 +161,11 @@ padding:2px;
 
 
 
-        <a href="projekt.php"  >HOME </a>
+        <a href="index.php"  >HOME </a>
         <a href="faqja1.php">About us  </a>
         <a href="Gallery.php" >Gallery </a>
         <a href="Booking.php">Booking  </a>
         <a href="Contact.php" >Contact </a>
-        <a href="Login.php">Login/Sign Up</a>
+
     </nav>
 </header>
