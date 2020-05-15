@@ -5,42 +5,7 @@
 <title>Untainted</title>
 <link rel="stylesheet" href="stylesheet3.css"/>
 	
-<script>
-		<!-- Validimi i Footer-it -->
-		function validate()
-	     		
-	     		{
-	     			var emri=document.getElementById('emri').value;
-	     			var email=document.getElementById('imella').value;
-	     			var a=document.footerform.Email.value;
-	     			
-	     		
-	     			
-	     		
-	     		if((emri=="")&&(email==""))
-	     		{
-	     			document.getElementById('errorinfooter').innerHTML="All fields must be filled!";
-	     			return false;
-	     		}
-	     		if(a.indexOf('@')<=0)
-	     			{
-	     				document.getElementById('emailerror').innerHTML="Invalid @ position!";
-	     				return false;
 
-	     			}
-	     			else if((a.charAt(a.length-4)!='.') &&(a.charAt(a.length-3)!='.'))
-	     			{
-	     				document.getElementById('emailerror').innerHTML="Invalid . position at 4!"   ;
-	     				return false;
-	     			}
-	     			
-	     		else
-	     		{
-	     			return true;
-	     		}
-}
-
-	</script>
 	</head>
 <header>
     <?php include('./views/header.php');
