@@ -21,7 +21,7 @@
 
         .rate {
             text-align: center;
-            background: #f1f1f1;;
+            background: #f1f1f1;
             width: 300px;
             position: absolute;
             top: 75%;
@@ -97,7 +97,7 @@
     </style>
 </head>
 
-
+<body>
 
 <?php include('./views/header.php');
 $alerti = "";
@@ -105,43 +105,46 @@ if (isset($_GET['error'])) {
     $alerti = "Please fill all the blanks";
     echo '<div class="alert alert-danger">' . $alerti . '</div>';
 }
-    
-    
+
 
 if(isset($_POST['submit-rate'])) {
     $name = $_POST['teksti'];
+
     if (!empty($name)) {
         $file = fopen('lista.txt', 'a');
         fwrite($file, $name . "\n");
-         } else {
-         echo 'Ju lutem provoni perseri!';
+    } else {
+        echo 'Ju lutem provoni perseri!';
     }
 }
     
-     function testfun()
+    function testfun()
 {
    $myfile = fopen("lista.txt", "r") or die("Unable to open file!");
    echo fread($myfile,filesize("lista.txt"));
    fclose($myfile);
 }
+
 if(array_key_exists('test',$_POST)){
    testfun();
 }
-?>
+    ?>
 
 <div class="rate">
     <h1>Rate us</h1>
 
     <p>Please input a rating between 1-10:</p>
-    <form action="Forma.php" method="POST">
+    <form action="Contact.php" method="POST">
         <input id="Test" name="teksti" type="text">
         <input type="submit" name="submit-rate" value="Submit"/>
 
         <p id="rate"></p>
-    </form>
+
+     </form>
     <form action="lista.txt" method="post">
     <input type="submit" name="test" id="test" value="Ratingu" /><br/>
-    </form>
+</form>
+
 </div>
 
 
@@ -177,4 +180,3 @@ if(array_key_exists('test',$_POST)){
 <?php include('./views/footer.php'); ?>
 
 </html>
-
