@@ -124,7 +124,9 @@ if(isset($_POST['submit-rate'])) {
    echo fread($myfile,filesize("lista.txt"));
    fclose($myfile);
 }
-
+if(array_key_exists('test',$_POST)){
+   testfun();
+}
 ?>
 
 <div class="rate">
