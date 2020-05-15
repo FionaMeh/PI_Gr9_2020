@@ -128,8 +128,11 @@ if(isset($_POST['submit-rate'])) {
         <input type="submit" name="submit-rate" value="Submit"/>
 
         <p id="rate"></p>
+    </form>
+    <form action="lista.txt" method="post">
+    <input type="submit" name="test" id="test" value="Ratingu" /><br/>
+    </form>
 </div>
-</form>
 
 
 <form action="Forma.php" method="POST">
