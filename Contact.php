@@ -108,16 +108,14 @@ if (isset($_GET['error'])) {
 
 
 if(isset($_POST['submit-rate'])) {
+
     $name = $_POST['teksti'];
 
     if (!empty($name)) {
         $file = fopen('lista.txt', 'a');
         fwrite($file, $name . "\n");
-    } else {
-        echo 'Ju lutem provoni perseri!';
+
     }
-}
-    
     function testfun()
 {
    $myfile = fopen("lista.txt", "r") or die("Unable to open file!");
@@ -128,22 +126,23 @@ if(isset($_POST['submit-rate'])) {
 if(array_key_exists('test',$_POST)){
    testfun();
 }
+}
     ?>
 
 <div class="rate">
-    <h1>Rate us</h1>
+    <h1>Say something about us</h1>
 
-    <p>Please input a rating between 1-10:</p>
+    <p>How do you like our services</p>
     <form action="Contact.php" method="POST">
         <input id="Test" name="teksti" type="text">
         <input type="submit" name="submit-rate" value="Submit"/>
 
         <p id="rate"></p>
 
-     </form>
+    </form>
     <form action="lista.txt" method="post">
-    <input type="submit" name="test" id="test" value="Ratingu" /><br/>
-</form>
+        <input type="submit" name="test" id="test" value="See other reactions"/><br/>
+    </form>
 
 </div>
 
