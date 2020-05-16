@@ -166,6 +166,8 @@ padding:2px;
         <a href="Gallery.php" >Gallery </a>
         <a href="Booking.php">Booking  </a>
         <a href="Contact.php" >Contact </a>
-        <a href="Login.php">Login/Sign Up</a>
+        <a href="Login.php">LogIn</a>
+		<a href="Signup.php">SignUp</a>
+		
     </nav>
 </header>
