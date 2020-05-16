@@ -76,7 +76,7 @@ margin:0;
 <b>
 <h1 style="text-align:center;">Expeditions</h1>
 <!--Perdorimi i abbr-->
-<a href="projekt.html"><abbr title="Homepage"><img src="images/home.jpg"></a>
+<a href="MainPage.php"><abbr title="Homepage"><img src="images/home.jpg"></a>
 
 <form action="#" method="post" onsubmit="return validation();" >
 
