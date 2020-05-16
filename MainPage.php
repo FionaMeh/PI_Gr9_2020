@@ -4,7 +4,7 @@
      <meta charset="utf-8">
 
      <title>Untainted</title>
-     <link rel="stylesheet" href="stylesheet2.css"/>
+     <link rel="stylesheet" href="views/stylesheet2.css"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
