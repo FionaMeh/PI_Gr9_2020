@@ -58,20 +58,12 @@ function isValidEmail($imella)
 
 function died($error)
 {
-    echo '<script type="text/javascript">alert("We are very sorry, but there were error(s) found with the form you submitted.' . $error . ' ");</script>';
+    echo '<script type="text/javascript">alert("We are sorry, but there were error(s) found with the form you submitted.' . $error . ' ");</script>';
 }
 
-//validimi i formes per rating te contact
 
-if (isset($_POST['submit-rate'])) {
-    $teksti = $_POST['teksti'];
-    if (($teksti == "") || (!is_numeric($teksti)) || ($teksti < 1) || ($teksti > 10)) {
-        died('Please fill the blank');
-    } else {
-        echo "Thank you for voting";
-    }
 
-}
+
 
 //Forma per booking, validimet dhe konektimi me databaze
 if (isset($_POST['submitted'])) {
@@ -88,7 +80,7 @@ if (isset($_POST['submitted'])) {
             died('give a valid pin');
         }
     }
-    if ((isset($_POST['data1'])) || isset($_POST['data1'])) {
+    if ((isset($_POST['data1'])) || isset($_POST['data2'])) {
         $data1 = $_POST['data1'];
         $data2 = $_POST['data2'];
         if ($data1 == "" || $data2 == "") {
@@ -104,11 +96,11 @@ if (isset($_POST['submitted'])) {
     }
 
     $sql = "INSERT INTO booked_form (client_name, room_type, check_IN, check_OUT ) VALUES (
-'$emri', '$checkRoom', '$data1', '$data2' ) ";
+             '$emri', '$checkRoom', '$data1', '$data2' ) ";
     if ($con->query($sql) == TRUE) {
         echo "Your reservation was successful,  " . $emri . " we will be waiting for you on " . $data1;
     } else {
-        echo "Error: " . $sql . " " . $con->error;
+        echo "Your reservation couldn't be made";
     }
     $con->close();
 
@@ -130,4 +122,30 @@ if (isset($_POST['footer-submit'])) {
     }
 
 }
+
+if (isset($_POST['reservated'])) {
+
+
+    $varName = $_POST['name'];
+    $varSurname = $_POST['surname'];
+    $varAdults = $_POST['nrAdults'];
+    $varChildren = $_POST['nrChildren'];
+    $varDestination = $_POST['Destination'];
+    $varTrip = $_POST['tripType'];
+    $varService = $_POST['serviceLevel'];
+    $varExtra = $_POST['extra'];
+    $varLength = $_POST['length'];
+    $varAlevel = $_POST['Alevel'];
+    $varPrice = $_POST['Price'];
+
+    if (empty($varAdults) || empty($varChildren) || empty($varDestination) || empty($varTrip) || empty($varName) || empty($varSurname)) {
+        died('Please fill information');
+    } else {
+        echo "Thank you for your reservation!";
+    }
+
+
+}
+
+
 ?>
