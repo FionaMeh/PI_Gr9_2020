@@ -161,8 +161,8 @@ padding:2px;
 
 
 
-        <a href="index.php"  >HOME </a>
-        <a href="faqja1.php">About us  </a>
+        <a href="MainPage.php" >HOME </a>
+        <a href="aboutus.php">About us  </a>
         <a href="Gallery.php" >Gallery </a>
         <a href="Booking.php">Booking  </a>
         <a href="Contact.php" >Contact </a>
