@@ -151,6 +151,7 @@ padding:2px;
 
                         <button class="button">SEARCH</button>
                         <input class="class_search1" type="text" name="Search" placeholder="Search Our Website...">
+						<a href="Login.php">LogIn</a>
                     </form>
                 </td>
             </tr>
@@ -166,8 +167,8 @@ padding:2px;
         <a href="Gallery.php" >Gallery </a>
         <a href="Booking.php">Booking  </a>
         <a href="Contact.php" >Contact </a>
-        <a href="Login.php">LogIn</a>
-		<a href="Signup.php">SignUp</a>
+        
+		
 		
     </nav>
 </header>
