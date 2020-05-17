@@ -54,7 +54,7 @@ if (isset($_REQUEST['submit'])) {
                     </div>
                 </form>
                 <p class="loginhere">
-                    Don't have an an account ? <a href="register.php" class="register.php">Register now here!</a>
+                    Dont have an an account ? <a href="register.php" class="register.php">Register now here!</a>
                 </p>
             </div>
         </div>
