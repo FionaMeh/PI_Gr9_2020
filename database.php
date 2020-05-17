@@ -1,13 +1,16 @@
+
 <?php
+define('DB_SERVER', 'localhost');
 
+define('DB_USERNAME', 'root');
 
-$con = mysqli_connect("localhost", "root", "", "udhetime");
-mysqli_set_charset($con, "utf8");
+define('DB_PASSWORD', '');
 
-if (mysqli_connect_errno()) {
-    echo "Gabim. Provoni me vone.";
+define('DB_DATABASE', 'udhetime');
+
+//konektimi me databazen
+
+$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE); //shtojme 'dbname'
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-?>
-
-
-
