@@ -50,7 +50,7 @@ if (isset($_REQUEST['submit'])) {
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
-                        <input onclick="return(submitlogin());" type="submit" name="submit" value="Login" /></td>
+                        <input onclick="return(submitlogin());" type="submit" name="submit"  class="form-submit" value="Login" /></td>
                     </div>
                 </form>
                 <p class="loginhere">
