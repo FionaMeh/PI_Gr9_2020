@@ -69,7 +69,48 @@ $currentTime = time();
             }
         }
     </script>
+<style>
+#container {
 
+    font-family: Arial;
+    font-size: 0.95em;
+    color: #929292;
+}
+
+.report-container {
+    display: table;
+    table-layout: fixed;
+    border: #E0E0E0 1px solid;
+    padding: 5px 0px 5px 10px;
+    border-radius: 2px;
+    width: 550px;
+    margin: 0 auto;
+}
+
+.weather-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+  
+}
+
+.weather-forecast {
+    color: #212121;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0px;
+    display: table-cell;
+}
+
+span.min-temperature {
+    margin-left: 15px;
+    color: #929292;
+}
+
+.time {
+    line-height: 25px;
+    display: table-cell;
+}
+</style>
    
 	 </head>
 	
