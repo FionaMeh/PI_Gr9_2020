@@ -215,7 +215,7 @@ echo $_SERVER['PHP_SELF'];
 </html>
 <!-- Add JQuery -->
 <script src="jquery.min.js"></script>
-<script src="scripts.js"></script>
+<script src="scripta.js"></script>
 
 
 </body>
