@@ -170,7 +170,13 @@ span.min-temperature {
      <br>
      <br>
      <br>
-     <h2>Castles</h2>
+      <table>
+			<tr>
+				<td style="width:44%" style="color:black;" ><hr/></td>
+				<td text-align: center style="color:black;">Castle</td>
+				<td style="width:55%"><hr/></td>
+			</tr>
+		</table>
      <?php include "database.php" ?>
      <?php
      $sql = "SELECT * FROM keshtjellat";
