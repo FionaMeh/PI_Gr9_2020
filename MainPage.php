@@ -168,57 +168,66 @@ span.min-temperature {
      </script>
 
      <br>
-     <br>
-     <br>
-      <table>
+	<br>
+	<br>
+	<div>
+		<table>
 			<tr>
 				<td style="width:44%" style="color:black;" ><hr/></td>
 				<td text-align: center style="color:black;">Castle</td>
 				<td style="width:55%"><hr/></td>
 			</tr>
 		</table>
-     <?php include "database.php" ?>
-     <?php
-     $sql = "SELECT * FROM keshtjellat";
 
 
-     $rezultati = mysqli_query($con, $sql);
+	  <div id="o" class="row">
+        <div id="o" class="column">
+            <img src="images/gjirokaster.jpg" alt="Avatar"  style="width:360px;height:160px" style="width:100%" />
+            <div class="longtext">
+                <h1 style="color:black;">Gjirokastër Castle</h1>
+				<p style="color:grey;" class="show-ellipsis">Gjirokastër Castle is a fortress in Gjirokastër, 
+					Albania (during Ottoman rule it was historically known as Ergiri while local Greeks referred to it as Argyrokastro, 
+					a name applied also to the castle).<br> Gjirokastër Castle is situated at a height of 336 metres).
+					The castle dominates the town and overlooks the strategically important route along the river valley.
+					 It is open to visitors and contains a military museum featuring captured artillery and memorabilia 
+					 of the Communist resistance against German occupation, <br>as well as a captured United States Air Force 
+					 plane to commemorate the Communist regime's struggle against the imperialist western powers.</p>
+            </div>
+            <button onclick="showText(this)" class="class_search3" class="moreButton">READ MORE</button>
+        </div>
 
-     if ($rezultati !== false) {
-     if ($rezultati->num_rows > 0) {
-     while ($rreshti = mysqli_fetch_assoc($rezultati)) {
-     $rreshti_titulli = $rreshti['titulli'];
-     $rreshti_teksti = $rreshti['teksti'];
-     $rreshti_foto = $rreshti['foto']
+        <div id="o" class="column">
+            <img src="images/kruje.jpg" alt="Avatar" style="width:360px;height:160px" style="width:100%" />
+            <div class="longtext">
 
-     ?>
+                <h1 style="color:black;">Krujë Castle</h1>
+				<p style="color:grey;" class="show-ellipsis">Krujë castle was built in the 5th or 6th century,
+					 perched above the city of the same name. At the time of the Ottoman threat, it was the headquarters
+					  of Gjergj Kastrioti, the “Dragon of Albania,” an Albanian nobleman and military commander.
+					   Kastrioti was sent as a hostage to the Ottoman <br> court early in his life, and after leaving service, 
+					   led a rebellion against the Ottoman Empire in Albania.</p>
+
+            </div>
+            <button onclick="showText(this)" class="class_search3" class="moreButton">READ MORE</button>
+        </div>
+
+        <div id="o" class="column">
+            <img src="images/rozafa (1).jpg" style="width:360px;height:160px" alt="Avatar" style="width:100%" />
+            <div class="longtext">
+                <h1 style="color:black;">Rozafa Castle</h1>
+				<p style="color:grey;" class="show-ellipsis">From its ancient Illyrian walls and the medieval ruins of the Balshaj,
+					 to the Towers of the Bushatllinj, Rozafa Castle is a monumental testament to the beauty of an everlasting fortress.
+					Built during Antiquity,<br> enduring the Roman and Ottoman empires, and remaining intact up to the present day,
+					 Rozafa Castle has witnessed the dramatic changes of tide over the course Albania’s fascinating history. 
+					 Needless to say then that this archaeological area is incredibly rich in historical tales.
+					  To understand the city of Shkodra, where the castle is located, and indeed the history of the country as a whole,
+					   a visit to Rozafa Castle is a must!</p>
+            </div>
+            <button onclick="showText(this)" class="class_search3" class="moreButton">READ MORE</button>
+        </div>
 
 
-     <div id="o" class="row">
-         <div id="o" class="column">
-             <img src="images/<?php echo $rreshti_foto; ?>" alt="Avatar" style="width:360px;height:160px"
-                  style="width:100%"/>
-             <div class="longtext">
-                 <h2 style="color:black;"><?= $rreshti_titulli; ?></h2>
-                 <p style="color:grey;" class="show-ellipsis"><?= $rreshti_teksti ?></p>
-             </div>
-             <button onclick="showText(this)" class="class_search3" class="moreButton">READ MORE</button>
-
-         </div>
-
-
-         <?php } ?>
-
-         <?php
-         } else {
-             echo "Nuk ka asnje lajm me kete ID";
-         }
-         } else {
-             echo "Gabim gjate leximit te lajmit";
-
-         }
-         ?>
-     </div>
+    </div>
 
      <table>
          <tr>
