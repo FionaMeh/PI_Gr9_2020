@@ -17,6 +17,29 @@ curl_close($ch);
 $data = json_decode($response);
 $currentTime = time();
 
+session_start();
+
+include_once 'User.php';
+
+$user = new User();
+$id = $_SESSION['uid'];
+
+if (!$user->get_session()) {
+
+    header("location:login.php");
+
+}
+
+
+if (isset($_GET['q'])) {
+
+    $user->user_logout();
+
+    header("location:login.php");
+
+}
+
+?>
 ?>
 <!DOCTYPE html>
 <html>
