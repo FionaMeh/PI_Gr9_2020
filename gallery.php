@@ -16,13 +16,7 @@ $rand_background = $background_colors[array_rand($background_colors)];
 
 
     <style>
-        .wrapper {
-            width: 45%;
-            height: auto;
-            margin: 10px auto;
-            border: 1px solid #cbcbcb;
-            background: white;
-        }
+        
 
         /*
         * COMMENT FORM
