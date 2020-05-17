@@ -320,22 +320,7 @@ background-color: #4CAF50;
 
 
 </style>
-<script>
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-	
-  </script>
+
 </head>
   <header>
     <?php include('./views/header.php');
@@ -415,9 +400,7 @@ function showSlides(n) {
 </body>
 </html> 
 
-<audio id="audio-container" controls>
-  <source  src="Falcon-Mark_Mattingly-169493032.mp3" type="audio/ogg"  bgcolor="black">
-</audio>
+
 <div class="korniza1">
 
 <p>
