@@ -1,45 +1,85 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<style type="text/css">
-th
-{
-text:aslign:right;
-}
-h3
-{
-text-align:center;
-}
-</style>
-</head>
-	 
-
-
-<body>
-<table cellpadding="10" cellspacing="20" align="center">
-
-<form method="post" action="valide.php">
-<tr><th>Email</th><td><input type="text id="email" name="email"></td></tr>
-<tr><th>Password</th><td><input type="password" id="pass" name="password"></td></tr>
-<tr><td colspan="5" align="center"><input type="checkbox" name="remember" value="1">Remember Me</td></tr>
-<tr><td colspan="5" align="right"><input type="submit" value="Login" name="login"></td></tr>
-</form>
-</table>
-
 <?php
-if(isset($_COOKIE['email'])and isset($_COOKIE['pass'])){
-$email=$_COOKIE['email'];
-$pass=$_COOKIE['pass'];
+session_start();
 
-echo "<script>
-document.getElementeById('email').value = '$email';
-document.getElementeById('pass').value = '$pass';
-</script>";
+include "User.php";
+
+$user = new User();
+if (isset($_REQUEST['submit'])) {
+    extract($_REQUEST);
+    $login = $user->check_login($emailusername, $password);
+    if ($login) {
+// Registration Success
+        header("location:MainPage.php");
+    } else {
+// Registration Failed
+        echo 'Wrong username or password';
+    }
 }
-
 ?>
-</body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="views/style.css">
+</head>
+<body>
+
+<div class="main">
+
+    <section class="signup">
+        <img src="images/signup-bg.jpg" alt="">
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form" name="reg">
+                    <h2 class="form-title">Log in account</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="emailusername" required="" id="name" placeholder="Username or email "/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="password" id="password" required="" placeholder="Password"/>
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input onclick="return(submitlogin());" type="submit" name="submit" value="Login" /></td>
+                    </div>
+                </form>
+                <p class="loginhere">
+                    Don't have an an account ? <a href="register.php" class="register.php">Register now here!</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script type="text/javascript" language="javascript">
+
+    function submitlogin() {
+        var form = document.login;
+        if(form.emailusername.value == ""){
+            alert( "Enter email or username." );
+            return false;
+        }
+        else if(form.password.value == ""){
+            alert( "Enter password." );
+            return false;
+        }
+    }
+
+</script>
+
+<!-- JS -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
