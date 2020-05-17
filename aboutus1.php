@@ -303,9 +303,6 @@ background-color: #4CAF50;
       </div>
     </div>
   </div>
-  <audio controls>
-    <source src="Sea Waves-SoundBible.com-946156036.mp3" type="audio/ogg">
-  </audio>
   <div class="korniza1">
   <p>
     Albania’s rugged coastline, with traditional villages nestled in isolated bays and golden beaches lapped by turquoise waters, was a revelation when travellers first started discovering the country during the turn of the century. Since then Europe’s last untouched beaches have changed almost beyond recognition, but there’s still plenty of reason to come
