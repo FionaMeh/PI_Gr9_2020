@@ -40,6 +40,23 @@ if (isset($_REQUEST['regjistro'])) {
 
     <!-- Main css -->
     <link rel="stylesheet" href="views/style.css">
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "php.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -55,7 +72,8 @@ if (isset($_REQUEST['regjistro'])) {
                         <input type="text" class="form-input" name="fullname" id="name" placeholder="Your Fullname"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="uname" id="uname" placeholder="Username"/>
+                        <p>Suggestions: <span id="txtHint"></span></p>
+                        <input type="text" class="form-input" name="uname" id="uname" placeholder="Username" onkeyup="showHint(this.value)"/>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-input" name="uemail" id="uemail" placeholder="Email"/>
