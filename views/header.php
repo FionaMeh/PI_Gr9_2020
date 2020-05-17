@@ -57,6 +57,8 @@ header {
   .topnav a:last-child {
       border-right: none
   }
+  
+  
   /* menu bar end */
   div.korniza {
       background-color: #ffffff;
@@ -134,10 +136,42 @@ color:white;
 text-align:left;
 padding:2px;
 }
+
+
+
+
+.header-top ul {
+    list-style-type: none;
+    display: flex;
+    padding: 3px;
+}
 </style>
 </head>
 
 <header>
+<div class="container">
+        <div class="header">
+            <div class="header-top">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="signup.php">Sign Up |</a>
+                        </li>
+                        <li>
+                            <a href="login.php">Login |</a>
+                        </li>
+                        
+                        <li>
+                        <a href="logout.php">
+                              Logout? |</a>
+                            
+                        </li>
+
+                        
+                    </ul>
+
+                </nav>
+            </div>
     <div class="searchF">
         <table>
             <tr>
@@ -166,8 +200,7 @@ padding:2px;
         <a href="Gallery.php" >Gallery </a>
         <a href="Booking.php">Booking  </a>
         <a href="Contact.php" >Contact </a>
-		<a href="Login.php">LogIn</a>
-		<a href="Signup.php">SignUp</a>
+		
         
 		
 		
