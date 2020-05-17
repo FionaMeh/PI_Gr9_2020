@@ -155,9 +155,6 @@ padding:2px;
                 <nav>
                     <ul>
                         <li>
-                            <a href="signup.php">Sign Up |</a>
-                        </li>
-                        <li>
                             <a href="login.php">Login |</a>
                         </li>
                         
