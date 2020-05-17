@@ -40,7 +40,7 @@ if (isset($_GET['q'])) {
 }
 
 ?>
-?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
