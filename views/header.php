@@ -151,7 +151,7 @@ padding:2px;
 
                         <button class="button">SEARCH</button>
                         <input class="class_search1" type="text" name="Search" placeholder="Search Our Website...">
-						<a href="Login.php">LogIn</a>
+						<a align="left" href="Login.php">LogIn</a>
                     </form>
                 </td>
             </tr>
