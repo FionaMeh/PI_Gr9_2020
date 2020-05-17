@@ -37,16 +37,18 @@ if (isset($_POST['submit-send'])) {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $sql = "INSERT INTO contact_form (firstName, emaili, mesazhi) VALUES (
-'$name', '$email', '$message') ";
-    if ($con->query($sql) == TRUE) {
+      $stmt = $con->prepare("INSERT INTO contact_form (firstName, emaili, mesazhi) VALUES (
+?, ?, ?) ");
+    $stmt->bind_param("sss", $name, $email, $message);
+    if ($stmt->execute()) {
         echo "Your records are saved " . $name;
     } else {
         echo "Something wrong happened";
     }
-
-
+    $stmt->close();
+    $con->close();
 }
+
 
 
 function isValidEmail($imella)
